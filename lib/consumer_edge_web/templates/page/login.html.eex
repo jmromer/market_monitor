@@ -1,0 +1,25 @@
+<section class="auth-container">
+    <div class="login-logo-container">
+        <a href="https://consumer-edge.com">
+            <img src="<%= Routes.static_path(@conn, "/images/celogo.svg") %>" alt="Consumer Edge logo"/>
+        </a>
+    </div>
+
+    <div class="login-form-container">
+        <h1>Log in to MarketMonitor</h1>
+
+        <div class="signup-link-container">
+            New user?
+            <a href="/signup" type="button" class="signup-link">
+                Try for free
+                <img src="<%= Routes.static_path(@conn, "/images/arrow-right.svg") %>" alt="Sign up"/>
+            </a>
+        </div>
+
+        <form action="">
+            <input name="email" type="text" value="" text="" placeholder="Email" />
+            <input name="password" type="password" value="" text="" placeholder="Password" />
+            <button type="submit">Log in</button>
+        </form>
+    </div>
+</section>

@@ -17,6 +17,8 @@ defmodule ConsumerEdgeWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/login", PageController, :login
+    get "/signup", PageController, :signup
   end
 
   # Other scopes may use custom stacks.
