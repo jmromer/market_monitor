@@ -2,6 +2,7 @@ defmodule ConsumerEdgeWeb.PageController do
   use ConsumerEdgeWeb, :controller
 
   def index(conn, _params) do
-    render(conn, "index.html")
+    data = Poison.encode!(Marketstack.eod("aapl"))
+    render(conn, "index.html", json: data)
   end
 end

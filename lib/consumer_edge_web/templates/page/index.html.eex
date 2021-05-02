@@ -29,6 +29,6 @@
     <h1>MarketMonitor</h1>
 
     <pre>
-     {"key": "value"}
+     <%= @json %>
     </pre>
 </main>
