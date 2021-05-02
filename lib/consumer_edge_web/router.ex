@@ -1,4 +1,5 @@
 defmodule ConsumerEdgeWeb.Router do
+  use Phoenix.Router
   use ConsumerEdgeWeb, :router
   use Pow.Phoenix.Router
 

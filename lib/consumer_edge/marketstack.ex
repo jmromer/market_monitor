@@ -16,17 +16,8 @@ defmodule Marketstack do
         raw_body
         |> Poison.decode!
         |> Map.get("data")
-        |> Enum.map(&(extract_response(&1)))
+        |> Enum.map(&([Map.get(&1, "date"), Map.get(&1, "close")]))
+        |> Enum.reduce(%{}, fn([date, close], acc) -> Map.put(acc, date, close) end)
     end
-  end
-
-  defp extract_response(daily_entry) do
-    daily_entry
-    |> Map.take(~w(date close))
-    |> format_values
-  end
-
-  defp format_values(%{"date" => timestamp, "close" => close}) do
-    %{close: close, date: timestamp |> String.split("T") |> List.first}
   end
 end

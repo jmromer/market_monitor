@@ -27,8 +27,16 @@
 
 <main class="dashboard-main">
     <h1>MarketMonitor</h1>
+    <article class="chart-tile">
+        <h2>
+            <form action="#" phx-submit="select" class="ticker-selector">
+                <input
+                  class="ticker-input" name="ticker" type="text"
+                  value="<%= assigns[:ticker] %>" placeholder="Ticker symbol...">
+            </form>
+        </h2>
 
-    <pre>
-     <%= @json %>
-    </pre>
+        <pre style="overflow: scroll;"><%= assigns[:chart] %></pre>
+        <%= raw assigns[:chart] %>
+    </article>
 </main>
