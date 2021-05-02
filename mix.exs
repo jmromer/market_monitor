@@ -33,7 +33,7 @@ defmodule ConsumerEdge.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:chartkick, "~> 0.4.0", git: "https://github.com/jmromer/chartkick-ex.git"},
+      {:chartkick, "~> 0.4.0", github: "jmromer/chartkick-ex"},
       {:credo, "~> 0.5", only: [:dev, :test]},
       {:decorator, "~> 1.3"},
       {:distillery, "~> 2.1"},
@@ -48,6 +48,7 @@ defmodule ConsumerEdge.MixProject do
       {:phoenix_html, "~> 2.11"},
       {:phoenix_live_dashboard, "~> 0.4"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
+      {:phoenix_live_view, "~> 0.15.5"},
       {:plug_cowboy, "~> 2.0"},
       {:poison, "~> 4.0.1"},
       {:postgrex, ">= 0.0.0"},

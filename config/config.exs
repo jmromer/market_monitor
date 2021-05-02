@@ -16,7 +16,7 @@ config :consumer_edge, ConsumerEdgeWeb.Endpoint,
   secret_key_base: "VYwJrzRPYQYejJ3jwGBTwUFeaT1O5C7YguSptz80Pg3FUmTjPwnUYxO60zpnCFOz",
   render_errors: [view: ConsumerEdgeWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: ConsumerEdge.PubSub,
-  live_view: [signing_salt: "ZbwhW+4T"]
+  live_view: [signing_salt: "IpZpeRTjmOeW75uvTRgQ+NS1wE2L+rYc"]
 
 # Configures Elixir's Logger
 config :logger, :console,
