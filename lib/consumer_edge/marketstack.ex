@@ -1,4 +1,6 @@
 defmodule Marketstack do
+  use Timex
+
   use Nebulex.Caching
   @ttl :timer.minutes(10)
 
@@ -12,12 +14,24 @@ defmodule Marketstack do
     case HTTPoison.get(url) do
       {:error, %{reason: reason}} ->
         %{error: reason}
+
       {:ok, %{body: raw_body}} ->
         raw_body
-        |> Poison.decode!
+        |> Poison.decode!()
         |> Map.get("data")
-        |> Enum.map(&([Map.get(&1, "date"), Map.get(&1, "close")]))
-        |> Enum.reduce(%{}, fn([date, close], acc) -> Map.put(acc, date, close) end)
+        |> Enum.map(fn %{"date" => timestamp, "close" => price} -> [timestamp, price] end)
+        |> Enum.map(&extract_date_and_eod_price/1)
     end
+  end
+
+  defp extract_date_and_eod_price([timestamp, price]) do
+    date =
+      timestamp
+      |> String.split("T")
+      |> List.first()
+      |> Timex.parse!("{YYYY}-{0M}-{0D}")
+      |> Timex.format!("%b %-d", :strftime)
+
+    [date, price]
   end
 end

@@ -53,7 +53,8 @@ defmodule ConsumerEdge.MixProject do
       {:postgrex, ">= 0.0.0"},
       {:pow, "~> 1.0.23"},
       {:telemetry_metrics, "~> 0.4"},
-      {:telemetry_poller, "~> 0.4"}
+      {:telemetry_poller, "~> 0.4"},
+      {:timex, "~> 3.7.5"}
     ]
   end
 
