@@ -10,23 +10,6 @@
   </head>
 
   <body>
-    <header>
-      <%= if false do %>
-        <section class="container">
-          <nav role="navigation">
-            <ul>
-              <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-                <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
-              <% end %>
-            </ul>
-          </nav>
-          <a href="https://consumer-edge.com">
-            <img src="<%= Routes.static_path(@conn, "/images/celogo.svg") %>" alt="Consumer Edge logo"/>
-          </a>
-        </section>
-        </header>
-    <% end %>
-
     <main role="main" class="container">
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>

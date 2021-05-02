@@ -1,6 +1,6 @@
 // Colors
 
-$ui-primary: #fff;
+$ui-primary: hsla(0, 0%, 100%, .76);
 $ui-secondary: #949393;
 $ui-background: #2c2b42;
 
@@ -17,6 +17,7 @@ $ui-info-bg: #f2dede;
 $ui-info-border: #ebccd1;
 
 $button-primary: #538bcb;
+$bg-dark: #222126;
 $input-bg: rgba(29, 28, 31, .5);
 
 // Alerts and form errors
@@ -99,7 +100,6 @@ body {
     background-size: cover;
   }
 }
-
 
 header {
   background: none;
@@ -204,6 +204,60 @@ header {
     white-space: nowrap;
     width: 320px;
     word-spacing: normal;
+  }
+}
+
+// Dashboard: Navigation
+.dashboard-menu {
+  width: 200px;
+
+  a {
+    color: $ui-primary;
+    text-decoration: none;
+  }
+
+  nav {
+    align-items: stretch;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    height: 100vh;
+    left: 0;
+    padding-bottom: 8px;
+    position: fixed;
+    top: 0;
+    transform: translateX(0);
+    width: 160px;
+    z-index: 100;
+
+    ul {
+      list-style-type: none;
+      padding-inline-start: 20px;
+    }
+
+    li {
+      margin: 0;
+      padding: 0;
+    }
+
+    .dashboard-menu-logo-container {
+      margin: 25px auto;
+      width: 100px;
+    }
+  }
+}
+
+.dashboard-main {
+  background: $bg-dark;
+  box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, .05), 0 1px 0 1px rgba(0, 0, 0, .3);
+  color: $ui-primary;
+  height: 100%;
+  margin-left: 160px;
+  min-height: 100vh;
+
+  h1 {
+    color: $ui-primary;
+    margin: 0 20px;
+    padding: 10px 0;
   }
 }
 

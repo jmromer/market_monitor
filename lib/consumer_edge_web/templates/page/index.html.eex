@@ -1,11 +1,34 @@
-<!-- TODO: Add dashboard layout -->
+<aside class="dashboard-menu">
+    <nav role="navigation">
+        <div class="dashboard-menu-logo-container">
+            <a href="/">
+                <img src="<%= Routes.static_path(@conn, "/images/celogo.svg") %>" alt="Consumer Edge logo"/>
+            </a>
+        </div>
 
-<header class="header" style="padding-top: 15px">
-    <%= if Pow.Plug.current_user(@conn) do %>
-        <nav role="navigation">
-            <ul class="nav nav-pills pull-left" style="margin-top: 0px">
-                <li><%= link "Sign out", to: Routes.pow_session_path(@conn, :delete), method: :delete %></li>
-            </ul>
-        </nav>
-    <% end %>
-</header>
+        <ul class="nav nav-pills pull-left" style="margin-top: 0px">
+            <li>
+                <%= link "Watchlist", to: Routes.page_path(@conn, :index) %>
+            </li>
+            <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
+                <li>
+                    <%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %>
+                </li>
+            <% end %>
+
+            <%= if Pow.Plug.current_user(@conn) do %>
+                <li>
+                    <%= link "Sign out", to: Routes.pow_session_path(@conn, :delete), method: :delete %>
+                </li>
+            <% end %>
+        </ul>
+    </nav>
+</aside>
+
+<main class="dashboard-main">
+    <h1>MarketMonitor</h1>
+
+    <pre>
+     {"key": "value"}
+    </pre>
+</main>
