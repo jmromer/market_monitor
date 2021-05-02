@@ -1,2 +1,11 @@
 <!-- TODO: Add dashboard layout -->
-<h1 style="color: #fff;">Dashboard</h1>
+
+<header class="header" style="padding-top: 15px">
+    <%= if Pow.Plug.current_user(@conn) do %>
+        <nav role="navigation">
+            <ul class="nav nav-pills pull-left" style="margin-top: 0px">
+                <li><%= link "Sign out", to: Routes.pow_session_path(@conn, :delete), method: :delete %></li>
+            </ul>
+        </nav>
+    <% end %>
+</header>

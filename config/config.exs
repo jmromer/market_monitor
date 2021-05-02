@@ -26,6 +26,17 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+# Use Pow for user authentication
+config :consumer_edge, :pow,
+  user: ConsumerEdge.Users.User,
+  repo: ConsumerEdge.Repo
+
+# Customize Pow templates
+config :consumer_edge, :pow,
+  user: ConsumerEdge.Users.User,
+  repo: ConsumerEdge.Repo,
+  web_module: ConsumerEdgeWeb
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
