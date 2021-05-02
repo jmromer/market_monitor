@@ -46,9 +46,6 @@ defmodule ConsumerEdgeWeb do
 
   def live_view do
     quote do
-      use Phoenix.LiveView,
-        layout: {ConsumerEdgeWeb.LayoutView, "live.html"}
-
       unquote(view_helpers())
     end
   end

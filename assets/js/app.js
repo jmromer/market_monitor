@@ -20,7 +20,18 @@ import LiveSocket from 'phoenix_live_view'
 import topbar from 'topbar'
 
 const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-const liveSocket = new LiveSocket('/live', Socket, { params: { _csrf_token: csrfToken } })
+
+const Hooks = {}
+
+Hooks.SelectTicker = {
+  updated () {
+    const article = this.el.parentElement
+    const script = article.querySelector('script')
+    if (script) { eval(script.innerText) }
+  }
+}
+
+const liveSocket = new LiveSocket('/live', Socket, { hooks: Hooks, params: { _csrf_token: csrfToken } })
 
 // Show progress bar on live navigation and form submits
 topbar.config({ barColors: { 0: '#29d' }, shadowColor: 'rgba(0, 0, 0, .3)' })
