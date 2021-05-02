@@ -37,6 +37,10 @@ config :consumer_edge, :pow,
   repo: ConsumerEdge.Repo,
   web_module: ConsumerEdgeWeb
 
+# Add Nebulex for caching
+config :consumer_edge, ConsumerEdge.Cache,
+  gc_interval: 86_400_000 #=> 1 day
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"

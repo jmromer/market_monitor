@@ -7,6 +7,8 @@ defmodule ConsumerEdge.Application do
 
   def start(_type, _args) do
     children = [
+      # Start the Nebulex cache
+      ConsumerEdge.Cache,
       # Start the Ecto repository
       ConsumerEdge.Repo,
       # Start the Telemetry supervisor

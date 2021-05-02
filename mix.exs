@@ -33,6 +33,8 @@ defmodule ConsumerEdge.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:nebulex, "~> 2.0"},
+      {:decorator, "~> 1.3"},
       {:credo, "~> 0.5", only: [:dev, :test]},
       {:distillery, "~> 2.1"},
       {:dogma, "~> 0.1", only: [:dev]},
