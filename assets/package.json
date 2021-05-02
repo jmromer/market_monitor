@@ -7,6 +7,8 @@
     "watch": "webpack --mode development --watch"
   },
   "dependencies": {
+    "chartkick": "^4.0.4",
+    "highcharts": "^9.0.1",
     "phoenix": "file:../deps/phoenix",
     "phoenix_html": "file:../deps/phoenix_html"
   },

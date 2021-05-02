@@ -39,7 +39,10 @@ config :consumer_edge, :pow,
 
 # Add Nebulex for caching
 config :consumer_edge, ConsumerEdge.Cache,
-  gc_interval: 86_400_000 #=> 1 day
+  gc_interval: 86_400_000 # => 1 day
+
+# Add Chartkick for chart generation
+config :chartkick, json_serializer: Poison
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
