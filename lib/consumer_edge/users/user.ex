@@ -1,4 +1,6 @@
 defmodule ConsumerEdge.Users.User do
+  @moduledoc nil
+
   use Ecto.Schema
   use Pow.Ecto.Schema
 

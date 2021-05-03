@@ -1,4 +1,6 @@
 defmodule ConsumerEdgeWeb.ChartLive do
+  @moduledoc nil
+
   use Phoenix.LiveView
   use Phoenix.HTML
 

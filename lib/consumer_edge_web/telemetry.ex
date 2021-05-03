@@ -1,4 +1,6 @@
 defmodule ConsumerEdgeWeb.Telemetry do
+  @moduledoc nil
+
   use Supervisor
   import Telemetry.Metrics
 

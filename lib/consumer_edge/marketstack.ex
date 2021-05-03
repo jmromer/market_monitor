@@ -1,4 +1,6 @@
 defmodule Marketstack do
+  @moduledoc "Marketstack API client"
+
   use Timex
 
   use Nebulex.Caching
