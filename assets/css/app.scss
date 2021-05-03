@@ -19,7 +19,7 @@ $ui-info-bg: #f2dede;
 $ui-info-border: #ebccd1;
 
 $button-primary: #538bcb;
-$bg-dark: rgba(0, 0, 0, 0.4);
+$bg-dark: rgba(0, 0, 0, .4);
 $input-bg: rgba(29, 28, 31, .5);
 
 // Alerts and form errors
@@ -314,7 +314,7 @@ header {
 .btn {
   background-color: transparent;
   border: 1px solid $ui-border;
-  color: white;
+  color: $ui-primary;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 400;
@@ -328,7 +328,7 @@ header {
 }
 
 .btn-check {
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
   pointer-events: none;
   position: absolute;
 }
@@ -336,9 +336,10 @@ header {
 .chart-tile {
   border: 1px solid $ui-border;
   color: $ui-primary;
+  height: 350px;
   margin: 10px;
-  max-width: 500px;
   padding: 0;
+  width: 500px;
 
   h2 {
     margin: 5px 10px;
@@ -350,6 +351,14 @@ header {
     margin: 0;
     padding: 0;
   }
+}
+
+.grid {
+  align-items: start-item;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  max-width: 1600px;
 }
 
 @media only screen and (min-width: 375px) and (orientation: portrait) {
