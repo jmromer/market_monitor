@@ -23,6 +23,8 @@ defmodule ConsumerEdgeWeb.ChartLive do
       socket
       |> assign(:ticker, String.upcase(ticker))
       |> assign(:type, chart_type)
+      |> assign(:type_line, selected_type_class(:line, chart_type))
+      |> assign(:type_bar, selected_type_class(:bar, chart_type))
       |> assign(:chart, generate_chart(ticker, chart_type, chart_id))
 
     {:noreply, socket}
@@ -38,7 +40,7 @@ defmodule ConsumerEdgeWeb.ChartLive do
           <input type="text" autocomplete="off" name="ticker" class="ticker-input" placeholder="Ticker symbol..." value="<%= assigns[:ticker] %>">
 
           <fieldset class="chart-type-select">
-            <label class="btn btn-secondary"
+            <label class="btn btn-secondary <%= assigns[:type_line] %>"
               phx-click="select-type"
               phx-value-chart_id="<%= @chart_id %>"
               phx-value-ticker="<%= assigns[:ticker] %>"
@@ -47,7 +49,7 @@ defmodule ConsumerEdgeWeb.ChartLive do
               <input type="radio" class="btn-check" name="type" value="line" checked>
             </label>
 
-            <label class="btn btn-secondary"
+            <label class="btn btn-secondary <%= assigns[:type_bar] %>"
               phx-click="select-type"
               phx-value-chart_id="<%= @chart_id %>"
               phx-value-ticker="<%= assigns[:ticker] %>"
@@ -75,4 +77,8 @@ defmodule ConsumerEdgeWeb.ChartLive do
   defp build_chart(json, "line", id), do: Chartkick.line_chart(json, id: id)
   defp build_chart(json, "bar", id), do: Chartkick.column_chart(json, id: id)
   defp build_chart(_json, _chart_type, _id), do: ""
+
+  defp selected_type_class(:line, "line"), do: "btn-selected"
+  defp selected_type_class(:bar, "bar"), do: "btn-selected"
+  defp selected_type_class(_, _), do: nil
 end

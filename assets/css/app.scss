@@ -2,6 +2,7 @@
 
 $ui-primary: hsla(0, 0%, 100%, .76);
 $ui-secondary: #949393;
+$ui-selected: #3f1634;
 $ui-background: #2c2b42;
 $ui-background-light: #2c2b42;
 $ui-border: #5f5e60;
@@ -333,6 +334,10 @@ header {
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
   position: absolute;
+}
+
+.btn-selected {
+  background-color: $ui-selected;
 }
 
 .chart-tile {
