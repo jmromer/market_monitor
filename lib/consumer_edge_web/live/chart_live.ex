@@ -16,7 +16,7 @@ defmodule ConsumerEdgeWeb.ChartLive do
     {:noreply, socket}
   end
 
-  def handle_event("select-type", params, socket) do
+  def handle_event("select-chart", params, socket) do
     %{"type" => chart_type, "ticker" => ticker, "chart_id" => chart_id} = params
 
     socket =
@@ -33,7 +33,7 @@ defmodule ConsumerEdgeWeb.ChartLive do
   def render(assigns) do
     ~L"""
     <article class="chart-tile">
-      <form action="#" class="ticker-selector" id="chart-form-<%= @chart_id %>" phx-submit="select-type" phx-hook="SelectTicker">
+      <form action="#" class="ticker-selector" id="chart-form-<%= @chart_id %>" phx-submit="select-chart" phx-hook="SelectTicker">
         <input type="hidden" name="chart_id" value="<%= @chart_id %>"/>
 
         <div class="ticker-select-header">
@@ -41,7 +41,7 @@ defmodule ConsumerEdgeWeb.ChartLive do
 
           <fieldset class="chart-type-select">
             <label class="btn btn-secondary <%= assigns[:type_line] %>"
-              phx-click="select-type"
+              phx-click="select-chart"
               phx-value-chart_id="<%= @chart_id %>"
               phx-value-ticker="<%= assigns[:ticker] %>"
               phx-value-type="line"
@@ -50,7 +50,7 @@ defmodule ConsumerEdgeWeb.ChartLive do
             </label>
 
             <label class="btn btn-secondary <%= assigns[:type_bar] %>"
-              phx-click="select-type"
+              phx-click="select-chart"
               phx-value-chart_id="<%= @chart_id %>"
               phx-value-ticker="<%= assigns[:ticker] %>"
               phx-value-type="bar"
