@@ -290,9 +290,11 @@ header {
       font-size: 20px;
       height: 16px;
       margin: 0;
-      min-width: 100%;
+      max-width: 400px;
+      min-width: 100px;
       outline: none;
       padding: 5px 0;
+      width: 370px;
     }
   }
 
@@ -361,7 +363,7 @@ header {
   max-width: 1600px;
 }
 
-@media only screen and (min-width: 375px) and (orientation: portrait) {
+@media only screen and (max-width: 1600px)  {
   .auth-container {
     display: contents;
     margin: 0;
@@ -409,5 +411,28 @@ header {
       margin: 5px 0;
       max-width: 100%;
     }
+  }
+
+  .dashboard-menu {
+    display: none;
+  }
+
+  .dashboard-main {
+    margin: 0;
+    padding: 10px;
+  }
+
+  .chart-tile {
+    width: 90%;
+  }
+
+  .grid {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 800px)  {
+  .dashboard-main .ticker-selector .ticker-input {
+    max-width: 200px;
   }
 }
