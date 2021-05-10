@@ -39,10 +39,5 @@
             <%= live_render(@conn, ConsumerEdgeWeb.ChartLive) %>
             <%= live_render(@conn, ConsumerEdgeWeb.ChartLive) %>
         </div>
-        <div>
-            <%= live_render(@conn, ConsumerEdgeWeb.ChartLive) %>
-            <%= live_render(@conn, ConsumerEdgeWeb.ChartLive) %>
-            <%= live_render(@conn, ConsumerEdgeWeb.ChartLive) %>
-        </div>
     </div>
 </main>
